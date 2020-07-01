@@ -1,35 +1,23 @@
 {
-   "name": "pony-run",
-   "description": "A simple dino-like HTML5-canvas TS game with ponies",
-   "repository": "git@github.com:ponydevs/ponyrun.git",
-   "license": "ISC",
+   "name": "labyrinth",
+   "description": "A labyrinth and memory game with Rarity the mare, and the Smooze",
+   "repository": "git@github.com:mathieucaroff/labyrinth.git",
+   "license": "CC0-1.0",
    "scripts": {
-      "build": "parcel build src/page.html -d public -o index.html"
-   },
-   "ava": {
-      "extensions": [
-         "ts"
-      ],
-      "require": [
-         "ts-node/register"
-      ],
-      "files": [
-         "src/**/*.test.ts"
-      ]
+      "build": "parcel build src/labyrinth.html --public-url labyrinth.d"
    },
    "devDependencies": {
-      "@types/hammerjs": "^2.0.36",
       "@types/node": "^13.9.1",
       "@types/seedrandom": "^2.4.28",
       "ava": "^3.8.1",
-      "prettier": "^1.19.1",
+      "parcel": "^2.2.1",
+      "prettier": "^2.0.5",
       "ts-node": "^8.6.2",
-      "typescript": "^3.8.3"
+      "typescript": "4.5.5"
    },
    "dependencies": {
       "@ui5/webcomponents": "^1.0.0-rc.7",
       "node-dijkstra": "^2.5.0",
-      "parcel": "^1.12.4",
       "rxjs": "^7.0.0-beta.0",
       "seedrandom": "^3.0.5",
       "typeface-anton": "^0.0.72"
