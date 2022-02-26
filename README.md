@@ -1,4 +1,4 @@
-# Pony Escape
+# Labyrinth
 
 A labyrinth and memory game in HTML5-canvas and TypeScript.
 
