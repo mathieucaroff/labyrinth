@@ -28,13 +28,8 @@ export let core = (prop: LoadProp) => {
    let { config, display, input, size } = prop
    let { revealLabyrinth$, setRevealButtonVisibility } = prop
 
-   let {
-      grid,
-      wallGrid,
-      dijkstra,
-      oddWallList,
-      evenWallList,
-   } = generateLabyrinth(prop)
+   let { grid, wallGrid, dijkstra, oddWallList, evenWallList } =
+      generateLabyrinth(prop)
    let score: PonyRenderProp['score'] = '<score screen>'
    let screen: PonyRenderProp['screen'] = 'play'
 
@@ -90,7 +85,7 @@ export let core = (prop: LoadProp) => {
     * @param direction The delta Pair that leads the player to an odd wall
     */
    let move = (direction: Pair) => {
-      let moveCounteIncrement = false
+      let moveCountIncrement = false
       let destinationReached = false
 
       if (pairEqual(player, destination) && direction.x === 1) {
@@ -108,7 +103,7 @@ export let core = (prop: LoadProp) => {
          wallGrid[player.y][player.x].visibility = 'visible'
          player.x += direction.x
          player.y += direction.y
-         moveCounteIncrement = true
+         moveCountIncrement = true
       } else if (destinationReached) {
          screen = 'score'
          if (score === 'defeat') {
@@ -124,7 +119,7 @@ export let core = (prop: LoadProp) => {
          player.y -= direction.y
       }
 
-      moveCount += +moveCounteIncrement
+      moveCount += +moveCountIncrement
 
       if (moveCount === config.hideDelay) {
          hideAllWalls()

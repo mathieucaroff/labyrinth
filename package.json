@@ -4,6 +4,9 @@
    "repository": "git@github.com:mathieucaroff/labyrinth.git",
    "license": "CC0-1.0",
    "scripts": {
+      "check": "tsc --noEmit",
+      "checkwatch": "tsc --noEmit --watch",
+      "serve": "parcel serve src/labyrinth.html",
       "build": "parcel build src/labyrinth.html --public-url labyrinth.d"
    },
    "devDependencies": {
