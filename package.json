@@ -6,8 +6,9 @@
    "scripts": {
       "check": "tsc --noEmit",
       "checkwatch": "tsc --noEmit --watch",
-      "serve": "parcel serve src/labyrinth.html",
-      "build": "parcel build src/labyrinth.html --public-url labyrinth.d"
+      "build": "parcel build src/index.html --dist-dir public",
+      "mcabuild": "parcel build src/index.html --public-url labyrinth.d",
+      "serve": "parcel serve src/index.html"
    },
    "devDependencies": {
       "@types/node": "^13.9.1",
