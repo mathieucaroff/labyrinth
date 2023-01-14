@@ -45,7 +45,9 @@ let getConfig = (prop: InitProp) => {
       config.smoozeDelay = Infinity
    }
 
-   console.info(`?seed=${config.seed}`)
+   console.info(`?seed=${config.seed}?`)
+
+   console.info(config)
 
    return config
 }

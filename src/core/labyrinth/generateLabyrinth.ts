@@ -29,11 +29,10 @@ export let generateLabyrinth = (prop: LoadProp) => {
    let evenWallList: LocalizedWall[] = []
 
    let grid = createArray2d<Square>(twiceSize, ({ y, x }) => {
-      let isOddWall = () => (x + y) % 2 === 1
-      let isGround = () => x % 2 === 1 && y % 2 === 1
-      let isMapBorder = () => {
-         return x <= 0 || y <= 0 || x >= twiceSize.x - 2 || y >= twiceSize.y - 2
-      }
+      let isOddWall = (x + y) % 2 === 1
+      let isGround = x % 2 === 1 && y % 2 === 1
+      let isMapBorder =
+         x <= 0 || y <= 0 || x >= twiceSize.x - 2 || y >= twiceSize.y - 2
 
       if (x >= size.x * 2 - 1 || y >= size.y * 2 - 1) {
          // bottom and right side shall be left unused
@@ -42,7 +41,7 @@ export let generateLabyrinth = (prop: LoadProp) => {
          }
       }
 
-      if (isGround()) {
+      if (isGround) {
          let me: GroundSquare = {
             type: 'ground',
          }
@@ -56,11 +55,11 @@ export let generateLabyrinth = (prop: LoadProp) => {
          visibility: 'visible',
       }
 
-      if (!isMapBorder()) {
+      if (!isMapBorder) {
          let localizedWall = { x, y, wall: me }
          wallList.push(localizedWall)
 
-         if (isOddWall()) {
+         if (isOddWall) {
             oddWallList.push(localizedWall)
          } else {
             evenWallList.push(localizedWall)
